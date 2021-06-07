@@ -17,7 +17,7 @@
       var(--spice-primary) 0%,
       var(--spice-secondary) 100%
   );
-  --panelColor: var(--spice-panelcolor);
+  --panelColor: var(--spice-rgb-panelcolor);
   --panelOpacity100: 0.3;
   --panelOpacity150: 0.4;
   --panelOpacity200: 0.6;
@@ -63,52 +63,109 @@ input,
   background-color: transparent;
 }
 
+.main-entityHeader-imagePlaceholder {
+  background: var(--background);
+  color: var(--textColor);
+}
+
+[id^=tippy-] {
+  backdrop-filter: blur(4px);
+}
+
+.main-contextMenu-menu {
+  background: rgba(var(--panelColor), var(--panelOpacity250)) !important;
+  border-radius: 15px;
+}
+.main-contextMenu-menu .main-contextMenu-menuItemButton:focus, .main-contextMenu-menu .main-contextMenu-menuItemButton:hover {
+  background-color: rgba(var(--spice-rgb-selected-row), 0.1) !important;
+  color: var(--spice-text) !important;
+  text-decoration: none;
+  border-radius: 15px;
+}
+
+select option {
+  color: var(--textColor);
+  background: var(--secondary);
+}
+
+[class*=-tabBar-dropdownItemLink].queue-tabBar-active, [class*=-tabBar-dropdownItemLink]:focus, [class*=-tabBar-dropdownItemLink]:hover {
+  background-color: rgba(var(--spice-rgb-selected-row), 0.1) !important;
+  color: var(--spice-text) !important;
+  text-decoration: none;
+  border-radius: 15px;
+}
+
+[class*=-tabBar-headerItemLink],
+[class*=-tabBar-moreButton] {
+  background: rgba(var(--panelColor), var(--panelOpacity100)) !important;
+  border-radius: 20px !important;
+}
+[class*=-tabBar-headerItemLink][class*=-tabBar-active], [class*=-tabBar-headerItemLink][class*=-tabBar-moreButtonActive],
+[class*=-tabBar-moreButton][class*=-tabBar-active],
+[class*=-tabBar-moreButton][class*=-tabBar-moreButtonActive] {
+  background: rgba(var(--panelColor), var(--panelOpacity200)) !important;
+}
+
+.main-dropDown-dropDown {
+  background: var(--background);
+  border-radius: 32px;
+  color: var(--textColor);
+}
+
+.progress-bar__bg,
+.progress-bar__fg_wrapper {
+  border-radius: var(--progressBarRadius);
+  height: var(--progressBarHeight);
+  background: var(--progressBarBackground);
+}
+
+.progress-bar__fg {
+  border-radius: var(--progressBarRadius);
+  height: var(--progressBarHeight);
+  background: var(--progressBarColor);
+}
+
+.main-type-finale {
+  color: var(--textColor) !important;
+  z-index: 1;
+}
+
+.x-toggle-indicatorWrapper {
+  background: var(--background);
+  transition: 0.3s;
+}
+.x-toggle-indicatorWrapper:hover {
+  transform: scale(1.05);
+}
+.x-toggle-indicatorWrapper .x-toggle-indicator {
+  top: 2.5px;
+}
+
+.main-card-card {
+  background: rgba(var(--panelColor), var(--panelOpacity200)) !important;
+}
+.main-card-card:hover {
+  background: rgba(var(--panelColor), var(--panelOpacity100)) !important;
+}
+
+* {
+  color: var(--textColor);
+}
+
+input {
+  color: var(--textColor) !important;
+}
+
+.main-topBar-background {
+  background: linear-gradient(rgba(var(--panelColor), var(--panelOpacity200)), rgba(var(--panelColor), var(--panelOpacity200))), var(--background) !important;
+}
+
 .main-trackList-trackListHeader {
   color: var(--textColor);
 }
 
-.main-topBar-background::before,
-.main-trackList-trackListHeaderStuck::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-}
-
-.main-topBar-background {
-  background: transparent !important;
-}
-.main-topBar-background::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity200);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-
 .main-trackList-trackListHeaderStuck {
-  background: transparent !important;
-}
-.main-trackList-trackListHeaderStuck::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity150);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.main-topBar-background,
-.main-trackList-trackListHeaderStuck {
-  background: var(--background) !important;
+  background: linear-gradient(rgba(var(--panelColor), var(--panelOpacity150)), rgba(var(--panelColor), var(--panelOpacity150))), var(--background) !important;
 }
 
 .main-trackList-trackList {
@@ -117,37 +174,11 @@ input,
 
 .main-userWidget-box,
 .main-avatar-userIcon {
-  background: transparent !important;
-}
-.main-userWidget-box::before,
-.main-avatar-userIcon::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity100);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
+  background: rgba(var(--panelColor), var(--panelOpacity100)) !important;
 }
 .main-userWidget-box:hover,
 .main-avatar-userIcon:hover {
-  background: transparent !important;
-}
-.main-userWidget-box:hover::before,
-.main-avatar-userIcon:hover::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity150);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.main-userWidget-box::before,
-.main-avatar-userIcon::before {
-  border-radius: 23px;
+  background: rgba(var(--panelColor), var(--panelOpacity150)) !important;
 }
 
 .x-searchInput-searchInputInput,
@@ -167,45 +198,11 @@ input,
 }
 
 .main-nowPlayingBar-nowPlayingBar {
-  background: transparent !important;
-}
-.main-nowPlayingBar-nowPlayingBar::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity200);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.main-nowPlayingBar-nowPlayingBar::before {
-  width: 100%;
-  height: inherit;
-  margin: 0 -16px;
-  z-index: unset;
+  background: rgba(var(--panelColor), var(--panelOpacity200)) !important;
 }
 
 .main-coverSlotExpanded-container {
   margin-bottom: 8px;
-}
-
-.progress-bar__bg,
-.progress-bar__fg_wrapper {
-  border-radius: var(--progressBarRadius);
-  height: var(--progressBarHeight);
-  background: var(--progressBarBackground);
-}
-
-.progress-bar__fg {
-  border-radius: var(--progressBarRadius);
-  height: var(--progressBarHeight);
-  background: var(--progressBarColor);
-}
-
-.main-type-finale {
-  color: var(--textColor) !important;
-  z-index: 1;
 }
 
 .main-playButton-PlayButton.main-playButton-primary {
@@ -255,6 +252,12 @@ input,
   transform: scale(1.08);
 }
 
+.main-topBar-button {
+  background: transparent;
+  background: rgba(var(--panelColor), var(--panelOpacity200)) !important;
+  border-radius: 50%;
+}
+
 .x-settings-facebookButton,
 .x-settings-facebookButton:active,
 .x-settings-facebookButton:focus,
@@ -264,93 +267,18 @@ input,
   border: none;
 }
 
-.main-topBar-button {
-  background: transparent;
-  background: transparent !important;
-}
-.main-topBar-button::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity200);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.main-topBar-button::before {
-  border-radius: 50%;
-}
-
-.main-dropDown-dropDown {
-  background: var(--background), var(--secondary);
-  border-radius: 32px;
-  color: var(--textColor);
-}
-
 .main-trackList-trackListRow:focus-within .main-trackList-addToPlaylistButton, .main-trackList-trackListRow:focus .main-trackList-addToPlaylistButton, .main-trackList-trackListRow:hover .main-trackList-addToPlaylistButton {
   border: none !important;
 }
 
 .main-createPlaylistButton-createPlaylistIcon {
-  background: transparent !important;
+  background: rgba(var(--panelColor), var(--panelOpacity200)) !important;
   color: var(--textColor);
-}
-.main-createPlaylistButton-createPlaylistIcon::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity200);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.main-createPlaylistButton-createPlaylistIcon::before {
   border-radius: 50%;
-}
-
-.main-entityHeader-imagePlaceholder {
-  background: var(--background);
-  color: var(--textColor);
 }
 
 .main-deletePlaylistDialog-secondaryButton {
   color: var(--textColor);
-}
-
-.main-card-card {
-  background: transparent !important;
-}
-.main-card-card::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity200);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.main-card-card:hover {
-  background: transparent !important;
-}
-.main-card-card:hover::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity100);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.main-card-card::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 15px;
 }
 
 .link-subtle {
@@ -358,17 +286,7 @@ input,
 }
 
 .main-navBar-navBarLink.main-navBar-navBarLinkActive {
-  background: transparent !important;
-}
-.main-navBar-navBarLink.main-navBar-navBarLinkActive::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity100);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
+  background: rgba(var(--panelColor), var(--panelOpacity100)) !important;
 }
 .main-navBar-navBarLink.main-navBar-navBarLinkActive::before {
   height: 40px;
@@ -376,132 +294,18 @@ input,
   border-radius: 20px;
 }
 
-.x-toggle-indicatorWrapper {
-  background: var(--background);
-  transition: 0.3s;
-}
-.x-toggle-indicatorWrapper:hover {
-  transform: scale(1.05);
-}
-
-.reddit-tabBar-headerItemLink {
-  background: transparent !important;
-}
-.reddit-tabBar-headerItemLink::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity100);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.reddit-tabBar-headerItemLink.reddit-tabBar-active {
-  background: transparent !important;
-}
-.reddit-tabBar-headerItemLink.reddit-tabBar-active::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity200);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.reddit-tabBar-headerItemLink::before {
-  top: 0;
-  left: 0;
-  border-radius: 20px;
-}
-
-.queue-tabBar-headerItemLink {
-  background: transparent !important;
-}
-.queue-tabBar-headerItemLink::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity100);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.queue-tabBar-headerItemLink.queue-tabBar-active {
-  background: transparent !important;
-}
-.queue-tabBar-headerItemLink.queue-tabBar-active::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity200);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.queue-tabBar-headerItemLink::before {
-  top: 0;
-  left: 0;
-  border-radius: 20px;
-}
-
 #main,
-.progress-bar__fg,
 .main-nowPlayingBar-container {
   background: var(--background);
 }
 
 .Root {
-  background: transparent !important;
-}
-.Root::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity100);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
+  background: rgba(var(--panelColor), var(--panelOpacity100)) !important;
 }
 
 .main-buddyFeed-buddyFeed,
 .Root__nav-bar {
-  background: transparent !important;
-}
-.main-buddyFeed-buddyFeed::before,
-.Root__nav-bar::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity100);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.main-contextMenu-menu {
-  background: transparent !important;
-  border-radius: 15px;
-}
-.main-contextMenu-menu::before {
-  content: "";
-  background: var(--panelColor);
-  opacity: var(--panelOpacity250);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-.main-contextMenu-menu::before {
-  top: 0;
-  left: 0;
-  border-radius: 15px;
+  background: rgba(var(--panelColor), var(--panelOpacity100)) !important;
 }
 
 .main-trackList-trackListRow.main-trackList-active:hover .main-trackList-rowMarker,

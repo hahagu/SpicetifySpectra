@@ -1,0 +1,128 @@
+@import "./functions.scss";
+
+//////////////////////////////////////////////////////
+//// UI
+//////////////////////////////////////////////////////
+
+// Image Placeholder
+.main-entityHeader-imagePlaceholder {
+    background: var(--background);
+    color: var(--textColor);
+}
+
+//////////////////////////////////////////////////////
+// Dropdown
+//////////////////////////////////////////////////////
+
+[id^="tippy-"] {
+    backdrop-filter: blur(4px);
+}
+
+.main-contextMenu-menu {
+    @include panel(var(--panelOpacity250));
+    border-radius: 15px;
+
+    .main-contextMenu-menuItemButton {
+        &:focus,
+        &:hover {
+            background-color: rgba(
+                var(--spice-rgb-selected-row),
+                0.1
+            ) !important;
+            color: var(--spice-text) !important;
+            text-decoration: none;
+            border-radius: 15px;
+        }
+    }
+}
+
+select option {
+    color: var(--textColor);
+    background: var(--secondary);
+}
+
+// TabBar Styling
+
+[class*="-tabBar-dropdownItemLink"] {
+    &.queue-tabBar-active,
+    &:focus,
+    &:hover {
+        background-color: rgba(var(--spice-rgb-selected-row), 0.1) !important;
+        color: var(--spice-text) !important;
+        text-decoration: none;
+        border-radius: 15px;
+    }
+}
+
+[class*="-tabBar-headerItemLink"],
+[class*="-tabBar-moreButton"] {
+    @include panel(var(--panelOpacity100));
+    border-radius: 20px !important;
+
+    &[class*="-tabBar-active"],
+    &[class*="-tabBar-moreButtonActive"] {
+        @include panel(var(--panelOpacity200));
+    }
+}
+
+// Settings Dropdown
+.main-dropDown-dropDown {
+    background: var(--background);
+    border-radius: 32px;
+    color: var(--textColor);
+}
+
+//////////////////////////////////////////////////////
+// Progress Bar
+//////////////////////////////////////////////////////
+
+.progress-bar__bg,
+.progress-bar__fg_wrapper {
+    border-radius: var(--progressBarRadius);
+    height: var(--progressBarHeight);
+    background: var(--progressBarBackground);
+}
+
+.progress-bar__fg {
+    border-radius: var(--progressBarRadius);
+    height: var(--progressBarHeight);
+    background: var(--progressBarColor);
+}
+
+//////////////////////////////////////////////////////
+// Timer
+//////////////////////////////////////////////////////
+
+.main-type-finale {
+    color: var(--textColor) !important;
+    z-index: 1;
+}
+
+//////////////////////////////////////////////////////
+// Settings Toggle
+//////////////////////////////////////////////////////
+
+.x-toggle-indicatorWrapper {
+    background: var(--background);
+    transition: 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .x-toggle-indicator {
+        top: 2.5px;
+    }
+}
+
+//////////////////////////////////////////////////////
+// Cards
+//////////////////////////////////////////////////////
+
+.main-card-card {
+    @include panel(var(--panelOpacity200));
+
+    &:hover {
+        @include panel(var(--panelOpacity100));
+    }
+}

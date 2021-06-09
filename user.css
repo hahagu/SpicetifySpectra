@@ -148,8 +148,44 @@ select option {
   background: rgba(var(--panelColor), var(--panelTransparency100)) !important;
 }
 
+.x-searchResults-topResult {
+  background: rgba(var(--panelColor), var(--panelTransparency200)) !important;
+  border-radius: 15px !important;
+}
+
 .main-cardImage-imageWrapper img {
   border-radius: 15px;
+}
+
+.x-heroCategoryCard-HeroCategoryCard::after,
+.x-categoryCard-CategoryCard::after {
+  content: "";
+  background: linear-gradient(45deg, black, transparent);
+  opacity: var(--panelTransparency200);
+  z-index: 1;
+}
+.x-heroCategoryCard-HeroCategoryCard .x-heroCategoryCard-heroTitle,
+.x-heroCategoryCard-HeroCategoryCard .x-heroCategoryCard-heroImage,
+.x-heroCategoryCard-HeroCategoryCard .x-categoryCard-title,
+.x-heroCategoryCard-HeroCategoryCard .x-categoryCard-image,
+.x-categoryCard-CategoryCard .x-heroCategoryCard-heroTitle,
+.x-categoryCard-CategoryCard .x-heroCategoryCard-heroImage,
+.x-categoryCard-CategoryCard .x-categoryCard-title,
+.x-categoryCard-CategoryCard .x-categoryCard-image {
+  z-index: 2;
+}
+
+.x-heroCategoryCard-HeroCategoryCard::after {
+  position: absolute;
+  inset: 0;
+}
+.x-heroCategoryCard-HeroCategoryCard .x-heroCategoryCard-heroTitle,
+.x-heroCategoryCard-HeroCategoryCard .x-heroCategoryCard-heroImage {
+  z-index: 2;
+}
+
+.x-carousel-carousel {
+  width: 100%;
 }
 
 .link-subtle {
@@ -336,6 +372,14 @@ input {
   backdrop-filter: blur(5px);
 }
 
+.x-carousel-carousel {
+  width: 100% !important;
+}
+
+.x-carousel-buttonContainer {
+  z-index: 3 !important;
+}
+
 .x-toggle-indicatorWrapper {
   background: var(--background);
   transition: 0.3s;
@@ -375,8 +419,9 @@ input {
   filter: brightness(10) grayscale(1);
 }
 
-.main-view-container__scroll-node-child section {
-  width: 85%;
+.main-view-container__scroll-node-child section,
+.main-view-container__scroll-node-child .contentSpacing {
+  width: 90%;
 }
 
 .main-actionBarBackground-background {

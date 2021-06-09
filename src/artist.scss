@@ -33,3 +33,11 @@
     @include panel(var(--panelTransparency300));
     backdrop-filter: blur(5px);
 }
+
+.x-carousel-carousel {
+    width: 100% !important;
+}
+
+.x-carousel-buttonContainer {
+    z-index: 3 !important;
+}

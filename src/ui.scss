@@ -123,8 +123,46 @@ select option {
     }
 }
 
+.x-searchResults-topResult {
+    @include panel(var(--panelTransparency200));
+    border-radius: 15px !important;
+}
+
 .main-cardImage-imageWrapper img {
     border-radius: 15px;
+}
+
+.x-heroCategoryCard-HeroCategoryCard,
+.x-categoryCard-CategoryCard {
+    &::after {
+        content: "";
+        background: linear-gradient(45deg, black, transparent);
+        opacity: var(--panelTransparency200);
+        z-index: 1;
+    }
+
+    .x-heroCategoryCard-heroTitle,
+    .x-heroCategoryCard-heroImage,
+    .x-categoryCard-title,
+    .x-categoryCard-image {
+        z-index: 2;
+    }
+}
+
+.x-heroCategoryCard-HeroCategoryCard {
+    &::after {
+        position: absolute;
+        inset: 0;
+    }
+
+    .x-heroCategoryCard-heroTitle,
+    .x-heroCategoryCard-heroImage {
+        z-index: 2;
+    }
+}
+
+.x-carousel-carousel {
+    width: 100%;
 }
 
 //////////////////////////////////////////////////////

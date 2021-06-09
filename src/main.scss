@@ -47,8 +47,9 @@
 }
 
 .main-view-container__scroll-node-child {
-    section {
-        width: 85%;
+    section,
+    .contentSpacing {
+        width: 90%;
     }
 }
 

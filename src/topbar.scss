@@ -3,7 +3,7 @@
 // Top Bar
 
 .main-topBar-background {
-    @include panelOverlay(var(--background), var(--panelOpacity200));
+    @include panelOverlay(var(--background), var(--panelTransparency200));
 }
 
 .main-trackList-trackListHeader {
@@ -11,7 +11,7 @@
 }
 
 .main-trackList-trackListHeaderStuck {
-    @include panelOverlay(var(--background), var(--panelOpacity150));
+    @include panelOverlay(var(--background), var(--panelTransparency150));
 }
 
 .main-trackList-trackList {
@@ -21,10 +21,10 @@
 // User Area
 .main-userWidget-box,
 .main-avatar-userIcon {
-    @include panel(var(--panelOpacity100));
+    @include panel(var(--panelTransparency100));
 
     &:hover {
-        @include panel(var(--panelOpacity150));
+        @include panel(var(--panelTransparency150));
     }
 }
 

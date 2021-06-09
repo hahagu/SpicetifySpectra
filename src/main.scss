@@ -3,10 +3,13 @@
 
 @use "./ui.scss";
 @use "./text.scss";
+@use "./buttons.scss";
+
 @use "./topbar.scss";
 @use "./bottombar.scss";
-@use "./buttons.scss";
-@use "./links.scss";
+@use "./sidebar.scss";
+@use "./artist.scss";
+@use "./settings.scss";
 
 @import "./functions.scss";
 
@@ -20,12 +23,12 @@
 }
 
 .Root {
-    @include panel(var(--panelOpacity100));
+    @include panel(var(--panelTransparency100));
 }
 
 .main-buddyFeed-buddyFeed,
 .Root__nav-bar {
-    @include panel(var(--panelOpacity100));
+    @include panel(var(--panelTransparency100));
 }
 
 .main-trackList-trackListRow.main-trackList-active {
@@ -41,4 +44,15 @@
 
 .main-trackList-playingIcon {
     filter: brightness(10) grayscale(1);
+}
+
+.main-view-container__scroll-node-child {
+    section {
+        width: 85%;
+    }
+}
+
+.main-actionBarBackground-background {
+    left: 0;
+    right: 0;
 }

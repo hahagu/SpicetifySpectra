@@ -1,0 +1,25 @@
+@import "./functions.scss";
+
+//////////////////////////////////////////////////////
+//// Settings Page
+//////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////
+// Settings Toggle
+//////////////////////////////////////////////////////
+
+.x-toggle-indicatorWrapper {
+    background: var(--background);
+    transition: 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// Settings Dropdown
+.main-dropDown-dropDown {
+    background: var(--background);
+    border-radius: 32px;
+    color: var(--textColor);
+}

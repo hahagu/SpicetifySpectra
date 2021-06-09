@@ -1,0 +1,26 @@
+@import "./functions.scss";
+
+//////////////////////////////////////////////////////
+//// Sidebar
+//////////////////////////////////////////////////////
+
+.main-navBar-navBarLink {
+    &.main-navBar-navBarLinkActive {
+        @include panel(var(--panelTransparency100));
+        border-radius: 20px;
+    }
+}
+
+.main-coverSlotExpanded-container {
+    .cover-art {
+        @include panel(var(--panelTransparency10));
+        img {
+            border-radius: 0px 30px 0px 0px;
+        }
+    }
+}
+
+.main-view-container__scroll-node-child {
+    display: flex;
+    justify-content: center;
+}

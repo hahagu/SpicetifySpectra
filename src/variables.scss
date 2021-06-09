@@ -29,11 +29,12 @@
 
     // Panel Colors
     --panelColor: var(--spice-rgb-panelcolor);
-    --panelOpacity100: 0.3;
-    --panelOpacity150: 0.4;
-    --panelOpacity200: 0.6;
-    --panelOpacity250: 0.7;
-    --panelOpacity300: 0.8;
+    --panelTransparency10: 0.125;
+    --panelTransparency100: 0.3;
+    --panelTransparency150: 0.4;
+    --panelTransparency200: 0.6;
+    --panelTransparency250: 0.7;
+    --panelTransparency300: 0.8;
 
     // Progress Bar Properties
     --progressBarColor: var(--background);

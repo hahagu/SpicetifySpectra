@@ -1,0 +1,35 @@
+@import "./functions.scss";
+
+//////////////////////////////////////////////////////
+//// Artists Page
+//////////////////////////////////////////////////////
+
+.artist-artistOverview-overview {
+    .main-entityHeader-headerText::before {
+        content: "";
+        background: linear-gradient(
+            45deg,
+            var(--spice-primary),
+            var(--spice-secondary),
+            transparent 60%
+        );
+        width: 50%;
+        height: 45%;
+        margin-bottom: -0.5%;
+        margin-left: -1.5%;
+        position: absolute;
+        z-index: -1;
+        border-radius: 25px;
+        opacity: var(--panelTransparency250);
+    }
+}
+
+.artist-artistAbout-container {
+    @include panel(var(--panelTransparency200));
+    border-radius: 15px;
+}
+
+.artist-artistAbout-modal {
+    @include panel(var(--panelTransparency300));
+    backdrop-filter: blur(5px);
+}

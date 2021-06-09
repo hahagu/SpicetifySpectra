@@ -18,11 +18,12 @@
       var(--spice-secondary) 100%
   );
   --panelColor: var(--spice-rgb-panelcolor);
-  --panelOpacity100: 0.3;
-  --panelOpacity150: 0.4;
-  --panelOpacity200: 0.6;
-  --panelOpacity250: 0.7;
-  --panelOpacity300: 0.8;
+  --panelTransparency10: 0.125;
+  --panelTransparency100: 0.3;
+  --panelTransparency150: 0.4;
+  --panelTransparency200: 0.6;
+  --panelTransparency250: 0.7;
+  --panelTransparency300: 0.8;
   --progressBarColor: var(--background);
   --progressBarBackground: var(--spice-progressbg);
   --progressBarRadius: 3px;
@@ -48,7 +49,10 @@ input,
 .main-userWidget-box,
 .main-avatar-userIcon,
 .main-contextMenu-menu,
-.main-createPlaylistButton-createPlaylistIcon {
+.main-createPlaylistButton-createPlaylistIcon,
+.cover-art,
+.artist-artistOverview-artistOverviewContent,
+.artist-artistAbout-container {
   background: transparent;
   background-color: unset !important;
   background-image: unset !important;
@@ -68,12 +72,24 @@ input,
   color: var(--textColor);
 }
 
+.main-entityHeader-background.main-entityHeader-gradient {
+  -webkit-transform: unset !important;
+  transform: unset !important;
+  opacity: calc(1 - calc(var(--scroll) * 3));
+}
+.main-entityHeader-background.main-entityHeader-overlay:after {
+  background-image: unset !important;
+}
+
 [id^=tippy-] {
   backdrop-filter: blur(4px);
 }
 
 .main-contextMenu-menu {
-  background: rgba(var(--panelColor), var(--panelOpacity250)) !important;
+  background: rgba(var(--panelColor), var(--panelTransparency250)) !important;
+  border-radius: 15px;
+}
+.main-contextMenu-menu .main-contextMenu-menuItemButton {
   border-radius: 15px;
 }
 .main-contextMenu-menu .main-contextMenu-menuItemButton:focus, .main-contextMenu-menu .main-contextMenu-menuItemButton:hover {
@@ -97,19 +113,13 @@ select option {
 
 [class*=-tabBar-headerItemLink],
 [class*=-tabBar-moreButton] {
-  background: rgba(var(--panelColor), var(--panelOpacity100)) !important;
+  background: rgba(var(--panelColor), var(--panelTransparency100)) !important;
   border-radius: 20px !important;
 }
 [class*=-tabBar-headerItemLink][class*=-tabBar-active], [class*=-tabBar-headerItemLink][class*=-tabBar-moreButtonActive],
 [class*=-tabBar-moreButton][class*=-tabBar-active],
 [class*=-tabBar-moreButton][class*=-tabBar-moreButtonActive] {
-  background: rgba(var(--panelColor), var(--panelOpacity200)) !important;
-}
-
-.main-dropDown-dropDown {
-  background: var(--background);
-  border-radius: 32px;
-  color: var(--textColor);
+  background: rgba(var(--panelColor), var(--panelTransparency200)) !important;
 }
 
 .progress-bar__bg,
@@ -130,22 +140,20 @@ select option {
   z-index: 1;
 }
 
-.x-toggle-indicatorWrapper {
-  background: var(--background);
-  transition: 0.3s;
-}
-.x-toggle-indicatorWrapper:hover {
-  transform: scale(1.05);
-}
-.x-toggle-indicatorWrapper .x-toggle-indicator {
-  top: 2.5px;
-}
-
 .main-card-card {
-  background: rgba(var(--panelColor), var(--panelOpacity200)) !important;
+  background: rgba(var(--panelColor), var(--panelTransparency200)) !important;
+  border-radius: 15px;
 }
 .main-card-card:hover {
-  background: rgba(var(--panelColor), var(--panelOpacity100)) !important;
+  background: rgba(var(--panelColor), var(--panelTransparency100)) !important;
+}
+
+.main-cardImage-imageWrapper img {
+  border-radius: 15px;
+}
+
+.link-subtle {
+  color: var(--textSecondary) !important;
 }
 
 * {
@@ -156,56 +164,7 @@ input {
   color: var(--textColor) !important;
 }
 
-.main-topBar-background {
-  background: linear-gradient(rgba(var(--panelColor), var(--panelOpacity200)), rgba(var(--panelColor), var(--panelOpacity200))), var(--background) !important;
-}
-
-.main-trackList-trackListHeader {
-  color: var(--textColor);
-}
-
-.main-trackList-trackListHeaderStuck {
-  background: linear-gradient(rgba(var(--panelColor), var(--panelOpacity150)), rgba(var(--panelColor), var(--panelOpacity150))), var(--background) !important;
-}
-
-.main-trackList-trackList {
-  border: none !important;
-}
-
-.main-userWidget-box,
-.main-avatar-userIcon {
-  background: rgba(var(--panelColor), var(--panelOpacity100)) !important;
-}
-.main-userWidget-box:hover,
-.main-avatar-userIcon:hover {
-  background: rgba(var(--panelColor), var(--panelOpacity150)) !important;
-}
-
-.x-searchInput-searchInputInput,
-.x-searchInput-searchInputInput::placeholder,
-.x-searchInput-searchInputSearchIcon {
-  color: var(--textColor) !important;
-}
-
-.main-nowPlayingBar-container {
-  border-top: none;
-}
-.main-nowPlayingBar-container::before {
-  content: "";
-  width: 100%;
-  height: 5px;
-  background: var(--progressBarColor);
-}
-
-.main-nowPlayingBar-nowPlayingBar {
-  background: rgba(var(--panelColor), var(--panelOpacity200)) !important;
-}
-
-.main-coverSlotExpanded-container {
-  margin-bottom: 8px;
-}
-
-.main-playButton-PlayButton.main-playButton-primary {
+.main-playButton-PlayButton {
   background: var(--buttonBackground);
 }
 
@@ -254,7 +213,7 @@ input {
 
 .main-topBar-button {
   background: transparent;
-  background: rgba(var(--panelColor), var(--panelOpacity200)) !important;
+  background: rgba(var(--panelColor), var(--panelTransparency200)) !important;
   border-radius: 50%;
 }
 
@@ -272,7 +231,7 @@ input {
 }
 
 .main-createPlaylistButton-createPlaylistIcon {
-  background: rgba(var(--panelColor), var(--panelOpacity200)) !important;
+  background: rgba(var(--panelColor), var(--panelTransparency200)) !important;
   color: var(--textColor);
   border-radius: 50%;
 }
@@ -281,17 +240,114 @@ input {
   color: var(--textColor);
 }
 
-.link-subtle {
-  color: var(--textSecondary) !important;
+.main-topBar-background {
+  background: linear-gradient(rgba(var(--panelColor), var(--panelTransparency200)), rgba(var(--panelColor), var(--panelTransparency200))), var(--background) !important;
+}
+
+.main-trackList-trackListHeader {
+  color: var(--textColor);
+}
+
+.main-trackList-trackListHeaderStuck {
+  background: linear-gradient(rgba(var(--panelColor), var(--panelTransparency150)), rgba(var(--panelColor), var(--panelTransparency150))), var(--background) !important;
+}
+
+.main-trackList-trackList {
+  border: none !important;
+}
+
+.main-userWidget-box,
+.main-avatar-userIcon {
+  background: rgba(var(--panelColor), var(--panelTransparency100)) !important;
+}
+.main-userWidget-box:hover,
+.main-avatar-userIcon:hover {
+  background: rgba(var(--panelColor), var(--panelTransparency150)) !important;
+}
+
+.x-searchInput-searchInputInput,
+.x-searchInput-searchInputInput::placeholder,
+.x-searchInput-searchInputSearchIcon {
+  color: var(--textColor) !important;
+}
+
+.main-nowPlayingBar-container {
+  border-top: none;
+}
+.main-nowPlayingBar-container::before {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background: var(--progressBarColor);
+}
+
+.main-nowPlayingBar-nowPlayingBar {
+  background: rgba(var(--panelColor), var(--panelTransparency200)) !important;
+}
+
+.main-coverSlotExpanded-container {
+  margin-bottom: 8px;
+}
+
+.main-nowPlayingWidget-coverArt .cover-art {
+  background: rgba(var(--panelColor), var(--panelTransparency10)) !important;
+}
+.main-nowPlayingWidget-coverArt .cover-art img {
+  border-radius: 5px;
 }
 
 .main-navBar-navBarLink.main-navBar-navBarLinkActive {
-  background: rgba(var(--panelColor), var(--panelOpacity100)) !important;
-}
-.main-navBar-navBarLink.main-navBar-navBarLinkActive::before {
-  height: 40px;
-  margin: 0px -24px;
+  background: rgba(var(--panelColor), var(--panelTransparency100)) !important;
   border-radius: 20px;
+}
+
+.main-coverSlotExpanded-container .cover-art {
+  background: rgba(var(--panelColor), var(--panelTransparency10)) !important;
+}
+.main-coverSlotExpanded-container .cover-art img {
+  border-radius: 0px 30px 0px 0px;
+}
+
+.main-view-container__scroll-node-child {
+  display: flex;
+  justify-content: center;
+}
+
+.artist-artistOverview-overview .main-entityHeader-headerText::before {
+  content: "";
+  background: linear-gradient(45deg, var(--spice-primary), var(--spice-secondary), transparent 60%);
+  width: 50%;
+  height: 45%;
+  margin-bottom: -0.5%;
+  margin-left: -1.5%;
+  position: absolute;
+  z-index: -1;
+  border-radius: 25px;
+  opacity: var(--panelTransparency250);
+}
+
+.artist-artistAbout-container {
+  background: rgba(var(--panelColor), var(--panelTransparency200)) !important;
+  border-radius: 15px;
+}
+
+.artist-artistAbout-modal {
+  background: rgba(var(--panelColor), var(--panelTransparency300)) !important;
+  backdrop-filter: blur(5px);
+}
+
+.x-toggle-indicatorWrapper {
+  background: var(--background);
+  transition: 0.3s;
+}
+.x-toggle-indicatorWrapper:hover {
+  transform: scale(1.05);
+}
+
+.main-dropDown-dropDown {
+  background: var(--background);
+  border-radius: 32px;
+  color: var(--textColor);
 }
 
 #main,
@@ -300,12 +356,12 @@ input {
 }
 
 .Root {
-  background: rgba(var(--panelColor), var(--panelOpacity100)) !important;
+  background: rgba(var(--panelColor), var(--panelTransparency100)) !important;
 }
 
 .main-buddyFeed-buddyFeed,
 .Root__nav-bar {
-  background: rgba(var(--panelColor), var(--panelOpacity100)) !important;
+  background: rgba(var(--panelColor), var(--panelTransparency100)) !important;
 }
 
 .main-trackList-trackListRow.main-trackList-active:hover .main-trackList-rowMarker,
@@ -317,6 +373,15 @@ input {
 
 .main-trackList-playingIcon {
   filter: brightness(10) grayscale(1);
+}
+
+.main-view-container__scroll-node-child section {
+  width: 85%;
+}
+
+.main-actionBarBackground-background {
+  left: 0;
+  right: 0;
 }
 
 /*# sourceMappingURL=user.css.map */

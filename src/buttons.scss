@@ -4,7 +4,7 @@
 //// Buttons
 //////////////////////////////////////////////////////
 
-.main-playButton-PlayButton.main-playButton-primary {
+.main-playButton-PlayButton {
     background: var(--buttonBackground);
 }
 
@@ -65,7 +65,7 @@
 .main-topBar-button {
     background: transparent;
 
-    @include panel(var(--panelOpacity200));
+    @include panel(var(--panelTransparency200));
     border-radius: 50%;
 }
 
@@ -89,7 +89,7 @@
 }
 
 .main-createPlaylistButton-createPlaylistIcon {
-    @include panel(var(--panelOpacity200));
+    @include panel(var(--panelTransparency200));
     color: var(--textColor);
     border-radius: 50%;
 }

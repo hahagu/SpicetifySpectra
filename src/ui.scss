@@ -4,10 +4,28 @@
 //// UI
 //////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////
+// Header
+//////////////////////////////////////////////////////
+
 // Image Placeholder
 .main-entityHeader-imagePlaceholder {
     background: var(--background);
     color: var(--textColor);
+}
+
+.main-entityHeader-background {
+    &.main-entityHeader-gradient {
+        -webkit-transform: unset !important;
+        transform: unset !important;
+        opacity: calc(1 - calc(var(--scroll) * 3));
+    }
+
+    &.main-entityHeader-overlay {
+        &:after {
+            background-image: unset !important;
+        }
+    }
 }
 
 //////////////////////////////////////////////////////
@@ -19,10 +37,12 @@
 }
 
 .main-contextMenu-menu {
-    @include panel(var(--panelOpacity250));
+    @include panel(var(--panelTransparency250));
     border-radius: 15px;
 
     .main-contextMenu-menuItemButton {
+        border-radius: 15px;
+
         &:focus,
         &:hover {
             background-color: rgba(
@@ -42,7 +62,6 @@ select option {
 }
 
 // TabBar Styling
-
 [class*="-tabBar-dropdownItemLink"] {
     &.queue-tabBar-active,
     &:focus,
@@ -56,20 +75,13 @@ select option {
 
 [class*="-tabBar-headerItemLink"],
 [class*="-tabBar-moreButton"] {
-    @include panel(var(--panelOpacity100));
+    @include panel(var(--panelTransparency100));
     border-radius: 20px !important;
 
     &[class*="-tabBar-active"],
     &[class*="-tabBar-moreButtonActive"] {
-        @include panel(var(--panelOpacity200));
+        @include panel(var(--panelTransparency200));
     }
-}
-
-// Settings Dropdown
-.main-dropDown-dropDown {
-    background: var(--background);
-    border-radius: 32px;
-    color: var(--textColor);
 }
 
 //////////////////////////////////////////////////////
@@ -99,30 +111,26 @@ select option {
 }
 
 //////////////////////////////////////////////////////
-// Settings Toggle
-//////////////////////////////////////////////////////
-
-.x-toggle-indicatorWrapper {
-    background: var(--background);
-    transition: 0.3s;
-
-    &:hover {
-        transform: scale(1.05);
-    }
-
-    .x-toggle-indicator {
-        top: 2.5px;
-    }
-}
-
-//////////////////////////////////////////////////////
 // Cards
 //////////////////////////////////////////////////////
 
 .main-card-card {
-    @include panel(var(--panelOpacity200));
+    @include panel(var(--panelTransparency200));
+    border-radius: 15px;
 
     &:hover {
-        @include panel(var(--panelOpacity100));
+        @include panel(var(--panelTransparency100));
     }
+}
+
+.main-cardImage-imageWrapper img {
+    border-radius: 15px;
+}
+
+//////////////////////////////////////////////////////
+//// Links
+//////////////////////////////////////////////////////
+
+.link-subtle {
+    color: var(--textSecondary) !important;
 }

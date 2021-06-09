@@ -15,9 +15,18 @@
 }
 
 .main-nowPlayingBar-nowPlayingBar {
-    @include panel(var(--panelOpacity200));
+    @include panel(var(--panelTransparency200));
 }
 
 .main-coverSlotExpanded-container {
     margin-bottom: 8px;
+}
+
+.main-nowPlayingWidget-coverArt {
+    .cover-art {
+        @include panel(var(--panelTransparency10));
+        img {
+            border-radius: 5px;
+        }
+    }
 }

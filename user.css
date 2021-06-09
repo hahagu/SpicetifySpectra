@@ -52,7 +52,8 @@ input,
 .main-createPlaylistButton-createPlaylistIcon,
 .cover-art,
 .artist-artistOverview-artistOverviewContent,
-.artist-artistAbout-container {
+.artist-artistAbout-container,
+.view-viewContainer-contentContainer {
   background: transparent;
   background-color: unset !important;
   background-image: unset !important;
@@ -421,7 +422,7 @@ input {
 
 .main-view-container__scroll-node-child section,
 .main-view-container__scroll-node-child .contentSpacing {
-  width: 90%;
+  width: 100%;
 }
 
 .main-actionBarBackground-background {

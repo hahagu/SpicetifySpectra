@@ -18,6 +18,11 @@
     border: none !important;
 }
 
+// Search Bar
+.x-searchInput-searchInputInput {
+    @include panel(var(--panelTransparency150));
+}
+
 // User Area
 .main-userWidget-box,
 .main-avatar-userIcon {

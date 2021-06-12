@@ -54,7 +54,8 @@ input,
 .artist-artistOverview-artistOverviewContent,
 .artist-artistAbout-container,
 .view-viewContainer-contentContainer,
-.artist-artistDiscography-headerContainer {
+.artist-artistDiscography-headerContainer,
+.main-heroCard-card {
   background: transparent;
   background-color: unset !important;
   background-image: unset !important;
@@ -292,6 +293,10 @@ input {
 
 .main-trackList-trackList {
   border: none !important;
+}
+
+.x-searchInput-searchInputInput {
+  background: rgba(var(--panelColor), var(--panelTransparency150)) !important;
 }
 
 .main-userWidget-box,

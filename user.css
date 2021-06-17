@@ -195,6 +195,10 @@ select option {
   color: var(--textSecondary) !important;
 }
 
+.GenericModal > div {
+  background: rgba(var(--panelColor), var(--panelTransparency150)) !important;
+}
+
 * {
   color: var(--textColor);
 }
@@ -263,6 +267,7 @@ input {
 .main-buttons-button:not(.main-entityHeader-titleButton) {
   background: var(--background) !important;
   border: none;
+  margin: 0 0.5em;
 }
 
 .main-trackList-trackListRow:focus-within .main-trackList-addToPlaylistButton, .main-trackList-trackListRow:focus .main-trackList-addToPlaylistButton, .main-trackList-trackListRow:hover .main-trackList-addToPlaylistButton {

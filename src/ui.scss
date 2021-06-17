@@ -172,3 +172,11 @@ select option {
 .link-subtle {
     color: var(--textSecondary) !important;
 }
+
+//////////////////////////////////////////////////////
+//// Modals
+//////////////////////////////////////////////////////
+
+.GenericModal > div {
+    @include panel(var(--panelTransparency150));
+}

@@ -21,7 +21,7 @@ To install this theme, go to your spicetify's theme folder,
 (Which can be viewed by running the command **`spicetify`**)
 and **`git clone https://github.com/hahagu/SpicetifySpectra.git`** from the themes directory.
 
-Then, you can run **`spicetify config current_theme Spectra`** and **`spicetify apply`** to apply the theme.
+Then, you can run **`spicetify config current_theme SpicetifySpectra`** and **`spicetify apply`** to apply the theme.
 
 #### Directions
 
